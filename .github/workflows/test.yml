@@ -8,6 +8,7 @@ jobs:
     steps:
         - uses: quarto-dev/quarto-actions/setup@v2 
         - uses: actions/checkout@v3 
+        - run: pip install nbformat nbclient ipykernel numpy 
         - run: quarto render RSE_LAB.ipynb --to pdf --execute 
 
 
