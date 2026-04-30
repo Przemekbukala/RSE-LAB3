@@ -7,9 +7,13 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
         - uses: quarto-dev/quarto-actions/setup@v2 
-        - uses: actions/checkout@v3 
+        - uses: actions/checkout@v3
         - run: pip install nbformat nbclient ipykernel numpy 
         - run: quarto install tinytex
         - run: quarto render RSE_LAB.ipynb --to pdf --execute 
+        - uses: actions/upload-artifact@v7
+        with:
+          path: thesis.pdf 
+
 
 
